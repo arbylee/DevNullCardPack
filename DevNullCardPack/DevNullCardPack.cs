@@ -11,6 +11,8 @@ namespace DevNullCardPack
     [BepInDependency("com.willis.rounds.unbound", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("pykess.rounds.plugins.moddingutils", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("pykess.rounds.plugins.cardchoicespawnuniquecardpatch", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("com.willuwontu.rounds.BlockForcePatch", BepInDependency.DependencyFlags.HardDependency)]
+
     // Declares our mod to Bepin
     [BepInPlugin(ModId, ModName, Version)]
     // The game our mod is associated with
@@ -30,7 +32,7 @@ namespace DevNullCardPack
         }
         void Start()
         {
-            CustomCard.BuildCard<MyCardName>();
+            CustomCard.BuildCard<GrowOthers>();
             instance = this;
         }
 
