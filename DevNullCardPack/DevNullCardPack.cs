@@ -33,6 +33,8 @@ namespace DevNullCardPack
         void Start()
         {
             CustomCard.BuildCard<GrowOthers>();
+            CustomCard.BuildCard<BFG>();
+            CustomCard.BuildCard<RapidFire>();
             instance = this;
         }
 
