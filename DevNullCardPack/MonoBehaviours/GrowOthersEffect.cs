@@ -11,7 +11,7 @@ namespace DevNullCardPack.MonoBehaviours
         public void Grow()
         {
             // characterStatModifiers.sizeMultiplier *= 1.1f;
-            base.transform.localScale *= 1.1f;
+            base.transform.localScale *= 1.4f;
         }
     }
 }
