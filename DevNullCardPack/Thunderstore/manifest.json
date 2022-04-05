@@ -1,0 +1,13 @@
+{
+    "name": "DevNullCardPack",
+    "version_number": "0.3.0",
+    "website_url": "https://github.com/arbylee/DevNullCardPack",
+    "description": "A card pack for the DevNull gang",
+    "dependencies": [
+        "willis81808-MMHook-1.0.0",
+        "BepInEx-BepInExPack_ROUNDS-5.4.1100",
+        "willis81808-UnboundLib-2.11.1",
+        "Pykess-ModdingUtils-0.2.7",
+        "Pykess-CardChoiceSpawnUniqueCardPatch-0.1.7"
+    ]
+}
