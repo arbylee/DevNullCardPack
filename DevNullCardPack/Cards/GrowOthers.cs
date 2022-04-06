@@ -11,6 +11,7 @@ namespace DevNullCardPack.Cards
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
             cardInfo.allowMultiple = false;
+            gun.damage = 0.8f;
 
             UnityEngine.Debug.Log($"[{DevNullCardPack.ModInitials}][Card] {GetTitle()} has been setup.");
         }
@@ -54,6 +55,13 @@ namespace DevNullCardPack.Cards
                     stat = "Target size",
                     amount = "40%",
                     simepleAmount = CardInfoStat.SimpleAmount.Some
+                },
+                new CardInfoStat()
+                {
+                    positive = false,
+                    stat = "Damage",
+                    amount = "-20%",
+                    simepleAmount = CardInfoStat.SimpleAmount.aLittleBitOf
                 }
             };
         }

@@ -10,8 +10,7 @@ namespace DevNullCardPack.MonoBehaviours
     {
         public override void OnStart()
         {
-            UnityEngine.Debug.Log($"Local scale before {base.transform.localScale}");
-                characterStatModifiersModifier.sizeMultiplier_mult = 1.4f;
+            characterStatModifiersModifier.sizeMultiplier_mult = 1.4f;
         }
     }
 }
