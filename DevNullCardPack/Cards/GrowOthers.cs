@@ -11,7 +11,6 @@ namespace DevNullCardPack.Cards
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
             cardInfo.allowMultiple = false;
-            gun.damage = 0.7f;
 
             UnityEngine.Debug.Log($"[{DevNullCardPack.ModInitials}][Card] {GetTitle()} has been setup.");
         }
@@ -39,7 +38,7 @@ namespace DevNullCardPack.Cards
         }
         protected override GameObject GetCardArt()
         {
-            return null;
+            return DevNullCardPack.ArtAssets.LoadAsset<GameObject>("C_GrowOthers");
         }
         protected override CardInfo.Rarity GetRarity()
         {
@@ -54,14 +53,7 @@ namespace DevNullCardPack.Cards
                     positive = true,
                     stat = "Target size",
                     amount = "40%",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                },
-                new CardInfoStat()
-                {
-                    positive = false,
-                    stat = "Damage",
-                    amount = "-30%",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
+                    simepleAmount = CardInfoStat.SimpleAmount.Some
                 }
             };
         }

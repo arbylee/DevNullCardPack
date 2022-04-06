@@ -4,6 +4,8 @@ using UnboundLib.Cards;
 using DevNullCardPack.Cards;
 using HarmonyLib;
 using CardChoiceSpawnUniqueCardPatch.CustomCategories;
+using Jotunn.Utils;
+using UnityEngine;
 
 namespace DevNullCardPack
 {
@@ -23,6 +25,9 @@ namespace DevNullCardPack
         private const string ModName = "DevNullCardPack";
         public const string Version = "0.4.0"; // What version are we on (major.minor.patch)?
         public const string ModInitials = "DNCP";
+
+        internal static AssetBundle ArtAssets;
+
         void Awake()
         {
             // Use this to call any harmony patch files your mod may have
@@ -31,8 +36,10 @@ namespace DevNullCardPack
         }
         void Start()
         {
+
+            DevNullCardPack.ArtAssets = AssetUtils.LoadAssetBundleFromResources("dncp_asset_bundle", typeof(DevNullCardPack).Assembly);
             CustomCard.BuildCard<GrowOthers>();
-            CustomCard.BuildCard<RapidFire>();
+            //CustomCard.BuildCard<RapidFire>();
             instance = this;
         }
 
