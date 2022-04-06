@@ -1,6 +1,10 @@
 # DevNull Card Pack
 A card pack for Rounds for the DevNull crew
 
+##### 0.6.0
+- Add Shrinky Dink card
+- Add back negative damage to Grow Others
+
 ##### 0.5.0
 - Remove Rapid Fire
 - Remove negative damage from Grow Others
