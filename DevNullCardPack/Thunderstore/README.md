@@ -1,6 +1,11 @@
 # DevNull Card Pack
 A card pack for Rounds for the DevNull crew
 
+##### 0.5.0
+- Remove Rapid Fire
+- Remove negative damage from Grow Others
+- Add Grow Others card art
+
 ##### 0.4.0
 - Remove BFG
 - Change how Grow Others works to interact better with other cards
