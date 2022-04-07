@@ -10,6 +10,7 @@ namespace DevNullCardPack.Cards
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
+            cardInfo.allowMultiple = false;
             statModifiers.health = 1.5f;
             gun.ammo = 2;
             gun.reloadTime = 0.8f;
