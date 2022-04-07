@@ -9,10 +9,12 @@ namespace DevNullCardPack.Extensions
     public class CharacterDataDevNullData
     {
         public bool reverseControls;
+        public bool reverseControlsOnStart;
 
         public CharacterDataDevNullData()
         {
             reverseControls = false;
+            reverseControlsOnStart = false;
         }
     }
     public static class CharacterDataExtension
@@ -41,6 +43,7 @@ namespace DevNullCardPack.Extensions
         private static void Prefix(Player __instance)
         {
             __instance.data.GetDevNullData().reverseControls = false;
+            __instance.data.GetDevNullData().reverseControlsOnStart = false;
         }
     }
     

@@ -7,7 +7,17 @@ namespace DevNullCardPack.MonoBehaviours
     {
         public override void OnStart()
         {
-            data.GetDevNullData().reverseControls = true;
+            Toggle();
+        }
+
+        public override void OnOnDestroy()
+        {
+            data.GetDevNullData().reverseControls = data.GetDevNullData().reverseControlsOnStart;
+        }
+
+        public void Toggle()
+        {
+            data.GetDevNullData().reverseControls = !data.GetDevNullData().reverseControls;
         }
     }
 }

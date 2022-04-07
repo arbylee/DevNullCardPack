@@ -2,11 +2,13 @@
 using UnboundLib.Cards;
 using UnityEngine;
 using DevNullCardPack.MonoBehaviours;
+using DevNullCardPack.Extensions;
 
 namespace DevNullCardPack.Cards
 {
     class Mirror : CustomCard
     {
+        private MonoBehaviours.MirrorAttacher mirrorAttacher;
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
@@ -19,14 +21,18 @@ namespace DevNullCardPack.Cards
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
             //Edits values on player when card is selected
-            player.gameObject.GetOrAddComponent<MirrorAttacher>();
-            player.gameObject.GetOrAddComponent<MirrorEffect>();
+            data.GetDevNullData().reverseControlsOnStart = true;
+            data.GetDevNullData().reverseControls = true;
+            mirrorAttacher = player.gameObject.GetOrAddComponent<MirrorAttacher>();
             UnityEngine.Debug.Log($"[{DevNullCardPack.ModInitials}][Card] {GetTitle()} has been added to player {player.playerID}.");
 
         }
         public override void OnRemoveCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
             //Run when the card is removed from the player
+            Destroy(mirrorAttacher);
+            data.GetDevNullData().reverseControlsOnStart = false;
+            data.GetDevNullData().reverseControls = false;
             UnityEngine.Debug.Log($"[{DevNullCardPack.ModInitials}][Card] {GetTitle()} has been removed from player {player.playerID}.");
         }
 

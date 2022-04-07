@@ -7,6 +7,7 @@ namespace DevNullCardPack.Cards
 {
     class ShrinkyDink : CustomCard
     {
+        private MonoBehaviours.ShrinkyDinkAttacher shrinkyDinkAttacher;
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
@@ -18,7 +19,7 @@ namespace DevNullCardPack.Cards
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
             //Edits values on player when card is selected
-            player.gameObject.GetOrAddComponent<ShrinkyDinkAttacher>();
+            shrinkyDinkAttacher = player.gameObject.GetOrAddComponent<ShrinkyDinkAttacher>();
 
             UnityEngine.Debug.Log($"[{DevNullCardPack.ModInitials}][Card] {GetTitle()} has been added to player {player.playerID}.");
 
@@ -26,6 +27,7 @@ namespace DevNullCardPack.Cards
         public override void OnRemoveCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
             //Run when the card is removed from the player
+            Destroy(shrinkyDinkAttacher);
             UnityEngine.Debug.Log($"[{DevNullCardPack.ModInitials}][Card] {GetTitle()} has been removed from player {player.playerID}.");
         }
 

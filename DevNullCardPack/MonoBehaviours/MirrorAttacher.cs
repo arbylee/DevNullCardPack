@@ -7,7 +7,19 @@ namespace DevNullCardPack.MonoBehaviours
     {
         public override void DealtDamage(Vector2 damage, bool selfDamage, Player damagedPlayer)
         {
-                damagedPlayer.gameObject.GetOrAddComponent<MirrorEffect>();
+            if (!selfDamage)
+            {
+                MirrorEffect mirrorEffect = damagedPlayer.gameObject.GetComponent<MirrorEffect>();
+                if (mirrorEffect == null)
+                {
+                    // Flips on start, so no need to toggle now
+                    damagedPlayer.gameObject.AddComponent<MirrorEffect>();
+                }
+                else
+                {
+                    mirrorEffect.Toggle();
+                }
+            }
         }
     }
 }
