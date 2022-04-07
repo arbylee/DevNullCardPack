@@ -1,6 +1,9 @@
 # DevNull Card Pack
 A card pack for Rounds for the DevNull crew
 
+##### 0.8.0
+- Fix Mirror card to keep the card holder's controls reversed at start of rounds
+
 ##### 0.7.0
 - Add Mirror card
 - Add more effects to Shrinky Dink
