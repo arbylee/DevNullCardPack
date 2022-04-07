@@ -40,6 +40,7 @@ namespace DevNullCardPack
             DevNullCardPack.ArtAssets = AssetUtils.LoadAssetBundleFromResources("dncp_asset_bundle", typeof(DevNullCardPack).Assembly);
             CustomCard.BuildCard<GrowOthers>();
             CustomCard.BuildCard<ShrinkyDink>();
+            CustomCard.BuildCard<Mirror>();
             //CustomCard.BuildCard<RapidFire>();
             instance = this;
         }
