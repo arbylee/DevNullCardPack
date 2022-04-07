@@ -1,6 +1,12 @@
 # DevNull Card Pack
 A card pack for Rounds for the DevNull crew
 
+##### 0.7.0
+- Add Mirror card
+- Add more effects to Shrinky Dink
+- Prevent Shrinky Dink from being chosen multiple times
+- Further limit the amount of shrinking to avoid clipping badly into the environment
+
 ##### 0.6.0
 - Add Shrinky Dink card
 - Add back negative damage to Grow Others

@@ -23,7 +23,7 @@ namespace DevNullCardPack
         public static DevNullCardPack instance { get; private set; }
         private const string ModId = "com.arbylee.rounds.DevNullCardPack";
         private const string ModName = "DevNullCardPack";
-        public const string Version = "0.6.0"; // What version are we on (major.minor.patch)?
+        public const string Version = "0.7.0"; // What version are we on (major.minor.patch)?
         public const string ModInitials = "DNCP";
 
         internal static AssetBundle ArtAssets;
