@@ -5,18 +5,13 @@ namespace DevNullCardPack.MonoBehaviours
 {
     internal class ShrinkyDinkAttacher : DealtDamageEffect
     {
+        private const int maxEffects = 3;
     public override void DealtDamage(Vector2 damage, bool selfDamage, Player damagedPlayer)
         {
-            Player player = this.gameObject.GetComponent<Player>();
-            ShrinkyDinkEffect shrinkyDinkEffect = player.gameObject.GetComponent<ShrinkyDinkEffect>();
-            if (shrinkyDinkEffect == null)
+            ShrinkyDinkEffect[] components = this.gameObject.GetComponent<Player>().gameObject.GetComponents<ShrinkyDinkEffect>();
+            if (components.Length < maxEffects)
             {
-                player.gameObject.AddComponent<ShrinkyDinkEffect>();
-            }
-            else
-            {
-                shrinkyDinkEffect = player.gameObject.GetComponent<ShrinkyDinkEffect>();
-                shrinkyDinkEffect.Shrink();
+                this.gameObject.GetComponent<Player>().gameObject.AddComponent<ShrinkyDinkEffect>();
             }
         }
     }

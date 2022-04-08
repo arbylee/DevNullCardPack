@@ -25,6 +25,7 @@ namespace DevNullCardPack.Cards
             data.GetDevNullData().reverseControls = true;
             mirrorAttacher = player.gameObject.GetOrAddComponent<MirrorAttacher>();
             UnityEngine.Debug.Log($"[{DevNullCardPack.ModInitials}][Card] {GetTitle()} has been added to player {player.playerID}.");
+
         }
         public override void OnRemoveCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
